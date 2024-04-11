@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="iWishServerApp.jnlp">
+  <information>
+    <title>iWishServerApp</title>
+    <vendor>ahmed</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="iWishServerApp.jar" size="28819" download="eager" />
+    <jar href="lib\commons-lang3-3.14.0.jar" size="657952" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\gson-2.10.jar" size="286235" download="eager" />
+    <jar href="lib\jackson-annotations-2.16.0-javadoc.jar" size="421400" download="eager" />
+    <jar href="lib\jfoenix-9.0.10.jar" size="2432549" download="eager" />
+    <jar href="lib\mysql-connector-j-8.2.0.jar" size="2489850" download="eager" />
+    <jar href="lib\ojdbc14-1.0.jar" size="1352918" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="iWishServerApp" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="IWishServerApp"  name="iWishServerApp" />
+  <update check="always"/>
+</jnlp>

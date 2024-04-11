@@ -1,0 +1,125 @@
+-- Users Table
+CREATE TABLE users (
+  user_id INT NOT NULL AUTO_INCREMENT,
+  username VARCHAR(45) NOT NULL,
+  password VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  firstName VARCHAR(45) NOT NULL,
+  lastName VARCHAR(45) NOT NULL,
+  balance DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (user_id),
+  UNIQUE KEY (email)
+);
+
+-- Items Table
+CREATE TABLE items (
+  item_id INT NOT NULL AUTO_INCREMENT,
+  item_name VARCHAR(255) NOT NULL,
+  item_price DECIMAL(10,2) NOT NULL,
+  item_category VARCHAR(255) NOT NULL,
+  PRIMARY KEY (item_id)
+);
+
+-- Wish List Table
+CREATE TABLE wish_list (
+  wish_id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  item_id INT NOT NULL,
+  PRIMARY KEY (wish_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
+  FOREIGN KEY (item_id) REFERENCES items (item_id)
+);
+
+-- Contributions Table
+CREATE TABLE contributions (
+  contribution_id INT NOT NULL AUTO_INCREMENT,
+  contributor_id INT NOT NULL,
+  wish_id INT NOT NULL,
+  contribution_amount DECIMAL(10,2) NOT NULL,
+  contribution_date DATE NOT NULL,
+  PRIMARY KEY (contribution_id),
+  FOREIGN KEY (contributor_id) REFERENCES users (user_id),
+  FOREIGN KEY (wish_id) REFERENCES wish_list (wish_id)
+);
+
+-- Notifications Table
+CREATE TABLE notifications (
+  notification_id INT NOT NULL AUTO_INCREMENT,
+  user_id INT NOT NULL,
+  from_user_id INT NOT NULL,
+  notification_text VARCHAR(255) NOT NULL,
+  notification_date DATE NOT NULL,
+  is_notified BOOLEAN NOT NULL,
+  PRIMARY KEY (notification_id),
+  FOREIGN KEY (user_id) REFERENCES users (user_id),
+  FOREIGN KEY (from_user_id) REFERENCES users (user_id)
+);
+
+
+-- add to Users Table
+INSERT INTO users (username, password, email, firstName, lastName, balance) VALUES
+('abdo', '123', 'abdo@gmail.com', 'abdo', 'ashraf', 723),
+('ahmed', '123', 'ahmed@gmail.com', 'ahmed', 'atef', 1200),
+('doniaa', '123', 'donia@gmail.com', 'donia', 'ayman', 1000),
+('test', 'test', 'test', 'test', 'test', 123);
+-- Items Table
+INSERT INTO items (item_name, item_price, item_category) VALUES
+('Laptop', 999.99, 'Electronics'),
+('Mobile', 499.99, 'Electronics'),
+('Band', 29.99, 'Fashion'),
+('Camera', 799.99, 'Electronics'),
+('Book', 19.99, 'Literature');
+
+
+-- adds 
+-- Assuming 'Laptop' has item_id = 1 and 'abdo@gmail.com' has user_id = 1 (replace with actual IDs)
+INSERT INTO wish_list (user_id, item_id) VALUES (1, 1);
+
+-- Assuming 'ahmed@gmail.com' has user_id = 2, 'abdo@gmail.com' has user_id = 1, and 'Laptop' has wish_id = 1 (replace with actual IDs)
+INSERT INTO contributions (contributor_id, wish_id, contribution_amount, contribution_date)
+VALUES (2, 1, 100.00, CURRENT_DATE);
+
+select * from users ; 
+select * from items ; 
+
+
+-- Assuming 'Laptop' has wish_id = 1 (replace with actual wish_id)
+SELECT
+    u.firstName AS contributor_first_name,
+    u.lastName AS contributor_last_name,
+    u.email AS contributor_email,
+    c.contribution_amount
+FROM
+    users u
+JOIN
+    contributions c ON u.user_id = c.contributor_id
+JOIN
+    wish_list w ON c.wish_id = w.wish_id
+JOIN
+    items i ON w.item_id = i.item_id
+WHERE
+    w.user_id = (SELECT user_id FROM users WHERE email = 'abdo@gmail.com') -- Abdo's wishlist
+    AND i.item_name = 'Laptop'; -- Specify the item_name of the specific item
+
+
+-- Assuming 'Laptop' has item_id = 1 and 'donia@gmail.com' has user_id = 3 (replace with actual IDs)
+INSERT INTO wish_list (user_id, item_id) VALUES (3, 1);
+
+
+-- Assuming 'Laptop' has wish_id = 2 (replace with actual wish_id)
+SELECT
+    u.firstName AS contributor_first_name,
+    u.lastName AS contributor_last_name,
+    u.email AS contributor_email,
+    c.contribution_amount
+FROM
+    users u
+JOIN
+    contributions c ON u.user_id = c.contributor_id
+JOIN
+    wish_list w ON c.wish_id = w.wish_id
+JOIN
+    items i ON w.item_id = i.item_id
+WHERE
+    w.user_id = (SELECT user_id FROM users WHERE email = 'donia@gmail.com') -- Donia's wishlist
+    AND i.item_name = 'Laptop'; -- Specify the item_name of the specific item

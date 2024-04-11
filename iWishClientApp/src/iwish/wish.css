@@ -1,0 +1,304 @@
+/* Login and Register Forms */
+.login-form  {
+    -fx-background-image: url('file:/C:/Users/ahmed/Downloads/9.png');
+}
+
+.register-form{
+    -fx-background-image: url('file:/C:/Users/ahmed/Downloads/12.png');
+}
+
+.login-btn, .create-btn {
+    -fx-background-color: #697680;
+    -fx-text-fill: #EAE3DC;
+    -fx-font-size: 14px;
+}
+
+.login-btn:hover, .create-btn:hover {
+    -fx-background-color: #D9CDC6;
+}
+
+/* Form Styling */
+.form {
+    -fx-text-fill: #D9CDC6;
+    -fx-font-size: 18px;
+}
+
+.form-field {
+    -fx-background-color: #EAE3DC;
+    -fx-font-size: 14px;
+}
+
+.form-field:hover {
+    -fx-background-color: #697680;
+}
+
+.form-field:focused {
+    -fx-background-color: #D2BCB2;
+}
+
+/* Center everything */
+.root {
+    -fx-alignment: center;
+}
+
+/* Center the child AnchorPane in StackPane */
+.anchor-pane {
+    -fx-alignment: center;
+}
+/* Main Scene Styling */
+#root {
+    -fx-background-color: #EAE3DC;
+}
+
+.tab {
+    -fx-background-color: #697680;
+    -fx-text-fill: #D9CDC6;
+}
+
+.tab-label {
+    -fx-text-fill: #D9CDC6;
+}
+
+#profileImage {
+    -fx-border-color: #D9CDC6;
+    -fx-border-width: 2;
+}
+
+/* Button Styling */
+.button, #rechargeBalanceButton, #showContributersButton, #clear_wishlist_button, 
+#removeWishlist_button, #contribute_to_fiend_button, #addToWishlistButton, 
+#clearButton, #addToAllItemsButton, #addFriendButton, #accept, #cancel, 
+#remove_notification, #clear_notifications, #logout_btn {
+    -fx-background-color: #697680;
+    -fx-text-fill: #EAE3DC;
+}
+
+.button:hover, #rechargeBalanceButton:hover, #showContributersButton:hover, 
+#clear_wishlist_button:hover, #removeWishlist_button:hover, 
+#contribute_to_fiend_button:hover, #addToWishlistButton:hover, #clearButton:hover, 
+#addToAllItemsButton:hover, #addFriendButton:hover, #accept:hover, #cancel:hover, 
+#remove_notification:hover, #clear_notifications:hover, #logout_btn:hover {
+    -fx-background-color: #D9CDC6;
+}
+
+/* Label Styling */
+.label, #nameLabel, #welcomeLabel, #userEmailLabel, #friendsLabel1, #friendsLabel11, #notificationsLabel {
+    -fx-text-fill: #5A5E63; /* Updated to dark color */
+    -fx-font-size: 20px; /* Increased font size */
+}
+.bold-label {
+    -fx-font-weight: bold;
+}
+/* Text Field and Area Styling */
+.text-field, .combo-box, .text-area, #itemCategoryComboBox, #itemNameTf, 
+#itemPriceTf, #friendSearchTf {
+    -fx-background-color: #EAE3DC;
+    -fx-font-size: 14px;
+}
+
+.text-field:hover, .combo-box:hover, .text-area:hover, #itemCategoryComboBox:hover, 
+#itemNameTf:hover, #itemPriceTf:hover, #friendSearchTf:hover {
+    -fx-background-color: #697680;
+}
+
+.text-field:focused, .combo-box:focused, .text-area:focused, #itemCategoryComboBox:focused, 
+#itemNameTf:focused, #itemPriceTf:focused, #friendSearchTf:focused {
+    -fx-background-color: #D2BCB2;
+}
+
+/* Table Styling */
+.table-view, .column-header, #notifications_tableView, #wishlistTable, 
+#contributers_tableview, #itemsTable11, #friendsWishlist_tableView, #m_itemsTable, 
+#allUsersTable, #friend_request {
+    -fx-background-color: #EAE3DC;
+    -fx-border-color: #D9CDC6;
+    -fx-border-width: 2;
+}
+
+.table-view .column-header {
+    -fx-text-fill: #D9CDC6;
+}
+
+/* Friend Request Button Styling */
+#friend_request .button {
+    -fx-background-color: #697680;
+    -fx-text-fill: #EAE3DC;
+}
+
+#friend_request .button:hover {
+    -fx-background-color: #D9CDC6;
+}
+
+#friend_request .button:disabled, #friend_request .button:disabled:hover {
+    -fx-background-color: #EAE3DC;
+    -fx-text-fill: #D9CDC6;
+}
+
+/* Notifications Styling */
+#notifications_tableView .column-header {
+    -fx-text-fill: #D9CDC6;
+}
+
+/* Styling for the Home tab */
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #5A5E63; /* Set the background color for the selected tab */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #697680; /* Set the background color for unselected tabs */
+}
+
+/* Styling for the Friends tab */
+.tab-pane > .tab-header-area > .headers-region > .tab:second:selected {
+    -fx-background-color: #D2BCB2; /* Set the background color for the selected tab */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:second {
+    -fx-background-color: #EAE3DC; /* Set the background color for unselected tabs */
+}
+.tab-pane {
+    -fx-tab-min-width: 5;
+    -fx-tab-max-width: 9999;
+}
+/* wish.css */
+
+/* Home Tab */
+.tab-content-home {
+    -fx-background-image: url('./icons/12.png');
+    -fx-background-size: cover;
+    -fx-background-color: #D2BCB2; /* Set the background color for the content */
+}
+
+/* Friends Tab */
+.tab-content-friends {
+    -fx-background-image: url('./icons/11.png');
+    -fx-background-size: cover;
+    -fx-background-color: #697680; /* Set the background color for the content */
+}
+
+/* All Items Tab */
+.tab-content-all-items {
+    -fx-background-image: url('./icons/9.png');
+    -fx-background-size: cover;
+    -fx-background-color: #EAE3DC; /* Set the background color for the content */
+}
+
+/* Connect Tab */
+.tab-content-connect {
+    -fx-background-image: url('./icons/7.png');
+    -fx-background-size: cover;
+    -fx-background-color: #D9CDC6; /* Set the background color for the content */
+}
+
+/* Notifications Tab */
+.tab-content-notifications {
+    -fx-background-image: url('./icons/8.png');
+    -fx-background-size: cover;
+    -fx-background-color: #5A5E63; /* Set the background color for the content */
+}
+/* About Us Tab */
+.tab-pane > .tab-header-area > .headers-region > .tab:sexth:selected {
+    -fx-background-color: #D2BCB2; /* Set the background color for the selected tab */
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:sexth {
+    -fx-background-color: #EAE3DC; /* Set the background color for unselected tabs */
+}
+
+/* About Us Tab Content Styling */
+.tab-content-about {
+    -fx-background-image: url('./icons/11.png'); /* Set the background image for the content */
+    -fx-background-size: cover;
+    -fx-background-color: #D2BCB2; /* Set the background color for the content */
+}
+
+/* About Us Tab Labels Styling */
+#aboutUsLabel1 {
+    -fx-text-fill: #FFFFFF; /* Set the text color */
+    -fx-font-size: 24px; /* Set the font size */
+}
+
+.label.about-label {
+    -fx-text-fill: #5A5E63; /* Set the text color */
+    -fx-font-size: 16px; /* Set the font size */
+}
+
+.bold-label.about-bold-label {
+    -fx-font-weight: bold; /* Set font weight to bold */
+}
+/*sssssssssssssssssssss*/
+
+/* RechargeScene.css */
+
+#AnchorPane {
+    -fx-background-color: #EAE3DC; /* Set the background color for the AnchorPane */
+}
+
+#AnchorPane .pane {
+    -fx-background-color: #FFF;
+    -fx-background-radius: 20,20,20,20;
+    -fx-border-radius: 20,20,20,20;
+    -fx-effect: dropshadow(gaussian, #D0D0D0, 10, 0, 0, 0);
+}
+
+#AnchorPane .pane .image-view {
+    -fx-fit-height: 150.0;
+    -fx-fit-width: 200.0;
+    -fx-layout-x: 357.0;
+    -fx-layout-y: 48.0;
+    -fx-pick-on-bounds: true;
+    -fx-preserve-ratio: true;
+}
+
+#AnchorPane .pane .text-field {
+    -fx-pref-height: 31.0;
+}
+
+#AnchorPane .pane #cardNum {
+    -fx-layout-x: 42.0;
+    -fx-layout-y: 46.0;
+    -fx-pref-width: 244.0;
+}
+
+#AnchorPane .pane #CVV {
+    -fx-layout-x: 42.0;
+    -fx-layout-y: 108.0;
+    -fx-pref-width: 82.0;
+}
+
+#AnchorPane .pane .text {
+    -fx-layout-x: 41.0;
+    -fx-layout-y: 41.0;
+    -fx-stroke-type: outside;
+    -fx-stroke-width: 0.0;
+}
+
+#AnchorPane .pane #ExpireDate {
+    -fx-layout-x: 151.0;
+    -fx-layout-y: 108.0;
+    -fx-pref-height: 31.0;
+    -fx-pref-width: 137.0;
+}
+
+#AnchorPane .pane #Amount {
+    -fx-layout-x: 41.0;
+    -fx-layout-y: 176.0;
+}
+
+#AnchorPane .pane #confirmButton {
+    -fx-layout-x: 249.0;
+    -fx-layout-y: 223.0;
+    -fx-mnemonic-parsing: false;
+    -fx-style-class: login;
+}
+.flow-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 0); /* Add a drop shadow by default */
+}
+
+.flow-pane > * {
+    -fx-margin: 0 5 0 0;
+}
